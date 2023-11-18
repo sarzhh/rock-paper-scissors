@@ -32,8 +32,22 @@ function playRound(playerChoice, computerChoice){
     else if(playerChoice == computerChoice){
         return "It is a tie";
     }
+
+    return result;
 }
 
-const playerChoice = window.prompt("rock, paper or scissors?");
-const computerChoice = getComputerChoice();
-console.log(playRound(playerChoice , computerChoice));
+function game(){
+    
+    
+    for (i = 0; i < 5; i++){
+        const playerChoice = window.prompt("rock, paper or scissors?");
+        const computerChoice = getComputerChoice();
+      const roundResult =  playRound(playerChoice , computerChoice);
+      console.log(`Round ${i + 1}: ${roundResult}`);
+    }
+
+    
+} 
+
+
+game();
