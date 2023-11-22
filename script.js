@@ -38,14 +38,26 @@ function playRound(playerChoice, computerChoice){
 
 function game(){
     
-    
+       let playerCount = 0;
+        let computerCount = 0;
     for (i = 0; i < 5; i++){
         const playerChoice = window.prompt("rock, paper or scissors?");
         const computerChoice = getComputerChoice();
       const roundResult =  playRound(playerChoice , computerChoice);
       console.log(`Round ${i + 1}: ${roundResult}`);
-    }
 
+        
+    if (roundResult === "You win! rock beats scissors" || roundResult === "You win! Paper beats rock" || roundResult === "You win! scissors beats paper"){
+       playerCount++;
+        console.log(`playerCount = ${playerCount}`);
+    } else if (roundResult === "You lose! Paper beats rock" || roundResult === "You lose! scissors beats paper" || roundResult === "You lose! rock beats scissors"){
+        computerCount++;
+        console.log(`computerCount = ${computerCount}`);
+    }
+}
+    if (playerCount > computerCount){
+        console.log("YOU WIN!!!")
+    }else(console.log("YOU LOOSE!!"))
     
 } 
 
